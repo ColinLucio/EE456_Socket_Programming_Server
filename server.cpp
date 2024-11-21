@@ -52,18 +52,18 @@ cout << "Binding successful." << endl;
 
 // Put the server socket in a passive mode & waiting for client connection
 // The second argument specifies the maximum length of the queue for pending
-connections (3 in this case)
+//connections (3 in this case)
 if (listen(server_fd, 3) < 0) {
  perror("listen"); // Print an error message if the listen call fails
  exit(EXIT_FAILURE); // Exit the program with a failure status
 }
 // If the server successfully starts listening, print a message indicating it
-is ready
+//is ready
 cout << "Listening for connections..." << endl;
 
 
 int new_socket; // Variable to hold the file descriptor for the new
-connection
+//connection
 socklen_t addrlen = sizeof(address); // Length of the address structure
 // Accept an incoming connection from the client
 // accept() returns a new socket file descriptor for the connection
@@ -81,7 +81,7 @@ char buffer[1024] = {0}; // Initialize the buffer to zero
 // The read() function reads up to 1024 bytes from the socket
 read(new_socket, buffer, 1024);
 cout << "Message from client: " << buffer << endl; // Print the received
-message
+//message
 // Message to send back to the client
 const char *hello = "Hello from server";
 // Send the response message to the client
